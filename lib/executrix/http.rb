@@ -69,6 +69,7 @@ module Executrix
     end
 
     def process_csv_response res
+      puts res.inspect
       CSV.parse(res.gsub(/\n\s+/, "\n"), headers: true).map{|r| r.to_hash}
     end
 
